@@ -105,9 +105,9 @@ class MatplotlibVisualizerEnv:
     def render(self, transformation: Dict[str, torch.Tensor]):
         self.ax.cla()
         # 축 범위 조정
-        self.ax.set_xlim(0.0, 0.7)
-        self.ax.set_ylim(-0.4, 0.4)
-        self.ax.set_zlim(0.4, 1.2)
+        self.ax.set_xlim(-0.7, 0.7)
+        self.ax.set_ylim(-0.7, 0.7)
+        self.ax.set_zlim(0.0, 2.0)
         self.ax.set_title("3D Hand Pose")
         self.ax.set_xlabel("X")
         self.ax.set_ylabel("Y")
