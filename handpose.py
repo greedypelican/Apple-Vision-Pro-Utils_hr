@@ -108,7 +108,7 @@ class MatplotlibVisualizerEnv:
         self.ax.set_xlim(0.0, 0.3)
         self.ax.set_ylim(-0.2, 0.2)
         self.ax.set_zlim(0.5, 1.1)
-        self.ax.set_title("3D Hand Pose Debug")
+        self.ax.set_title("3D Hand Pose")
         self.ax.set_xlabel("X")
         self.ax.set_ylabel("Y")
         self.ax.set_zlabel("Z")
@@ -121,7 +121,7 @@ class MatplotlibVisualizerEnv:
             head_pos = h_pose[:3, 3].cpu().numpy()
             draw_frame(self.ax, h_pose.cpu().numpy(), scale=0.08, label="Head")
             # 머리 점도 찍고 번호를 매기려면
-            self.ax.scatter(*head_pos, c="red", s=100)
+            self.ax.scatter(*head_pos, c="red", s=500)
             self.ax.text(*head_pos, "H", color="red", fontsize=10)
 
         for side, color in [("left", "green"), ("right", "blue")]:
@@ -183,7 +183,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, required=True, default="192.168.0.17")
+    parser.add_argument("--ip", type=str, required=False, default="192.168.0.17")
     parser.add_argument("--record", action="store_true")
     parser.add_argument("--follow", action="store_true")
     args = parser.parse_args()
