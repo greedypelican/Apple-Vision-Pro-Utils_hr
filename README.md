@@ -39,7 +39,7 @@ python visualize_handpose.py --ip <VISION_PRO_IP> [--record] [--follow] [--save_
 Run the code with file path to start visualizing saved hand poses :
 
 ```bash
-python visualize_handpose.py --load <NPZ_FILE_PATH>
+python visualize_handpose.py --load <SEQUENCE_FILE_PATH>
 ```
 
 ### Arguments:
